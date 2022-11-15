@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to right, #3a0196, #1309a0);
+    color: white;
+    height: 100vh;
+}
+header{
+    display: none;
+}
+section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 500px;
+    background-color: #190549;
+    border-radius: 10px;
+}
+section h2{
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+section label{
+    position: absolute;
+    top: 22%;
+    left: 5%;
+    transition: .5s;
+}
+section input:focus~label, input:valid~label{
+    top: 20%;
+    text-shadow: 0px 0px 12px #0be0e7;
+    font-size: 15px;
+}
+section input{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 90%;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 2px solid white;
+    color: white;
+    padding: 10px 0;
+}
+section #p{
+    /* background-color: white; */
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* text-align: center; */
+}
+section p.resultado{
+    position: absolute;
+    top: 55%;
+    left: 40%;
+    transform: translateX(-50%);
+}
+section button{
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    padding: 20px 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0184b8;
+    color: white;
+    transition: background .5s;
+}
+section button:hover{
+    background-color: #1b4ab1;
+    cursor: pointer;
+}
+footer{
+    position: absolute;
+    bottom: 18%;
+    left: 50%;
+    transform: translate(-50%);
+}
