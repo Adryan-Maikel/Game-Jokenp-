@@ -50,6 +50,11 @@ section input{
     color: white;
     padding: 10px 0;
 }
+input:-webkit-autofill {
+    /* Remover cores padrões do navegador no autocomplete */
+    -webkit-box-shadow: 0 0 0 30px #190549 inset;
+    -webkit-text-fill-color: white !important;
+}
 section #instruction{
     /* background-color: white; */
     position: fixed;
@@ -126,13 +131,7 @@ section button#cancel:hover{
 
 footer{
     position: absolute;
-    top: 75%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%);
-}
-@media (max-height: 800px) {
-    footer{
-        top: auto !important;
-        bottom: 9%;
-    }
 }
