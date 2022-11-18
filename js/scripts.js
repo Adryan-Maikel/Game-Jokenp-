@@ -2,29 +2,52 @@ var player,winner;
 var choosePlayer, chooseCpu;
 var cpuPoints,playerPoints;
 
+input = window.document.getElementById("player");
+label = window.document.getElementById("label");
+button = window.document.getElementById("play");
+instruction = window.document.getElementById("instruction");
+scoreboard = window.document.getElementById("scoreboard");
+buttonCancel = window.document.getElementById("cancel");
+
 function play(){
-    player = window.document.getElementById('player').value;
+
+    player = input.value;
+    // player.style.display = "none";
+    input.style.display = "none";
+    label.style.display = "none";
+    button.style.display = "none";
+    instruction.style.display = "none";
+
     cpuPoints = 0;
     playerPoints = 0;
+    scoreboard.innerHTML = `&emsp;Placar <br> Player: ${playerPoints}  vs Cpu: ${cpuPoints} <br>`;
+
+    buttonCancel.style.display = "block";
+
     if(player === null||player === ""){
         player = "Player";
     }
     // alert(`Olá ${player}`);
-    choosePlayer = prompt(`Escolha\n1 - Pedra\n2 - Papel\n3 - Tesoura`);
+    // choosePlayer = prompt(`Escolha\n1 - Pedra\n2 - Papel\n3 - Tesoura`);
     if(choosePlayer == 1||choosePlayer == 2||choosePlayer ==3){
         checkWinner(choosePlayer);
         if(winner === "player"){
-            alert(`Ganhou!\n${player} escolheu ${nameChoose(Number(choosePlayer))} e a maquina escolheu ${nameChoose(chooseCpu)}.`);    
+            // alert(`Ganhou!\n${player} escolheu ${nameChoose(Number(choosePlayer))} e a maquina escolheu ${nameChoose(chooseCpu)}.`);    
         }else if(winner === "cpu"){
-            alert(`Perdeu!\n${player} escolheu ${nameChoose(Number(choosePlayer))} e a maquina escolheu ${nameChoose(chooseCpu)}.`);
+            // alert(`Perdeu!\n${player} escolheu ${nameChoose(Number(choosePlayer))} e a maquina escolheu ${nameChoose(chooseCpu)}.`);
         }else{
-            alert("Empate!\nOs dois escolheram "+nameChoose(Number(choosePlayer))+".");
+            // alert("Empate!\nOs dois escolheram "+nameChoose(Number(choosePlayer))+".");
         }
 
     }else{
-        alert(`Escolha invalida, perdeu essa!`);
+        // alert(`Escolha invalida, perdeu essa!`);
         cpuPoints++
     }
+}
+
+function cancel() {
+    //recarrega a pagina cancelando o jogo
+    document.location.reload(true);
 }
 
 function nameChoose(choose){
@@ -52,4 +75,6 @@ function checkWinner(choosePlayer){
     }else{
         winner = "none";
     }
+
+
 }

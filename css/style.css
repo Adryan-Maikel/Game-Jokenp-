@@ -29,19 +29,20 @@ section h2{
 section label{
     position: absolute;
     top: 22%;
-    left: 5%;
+    left: 14%;
     transition: .5s;
 }
 section input:focus~label, input:valid~label{
     top: 20%;
-    text-shadow: 0px 0px 12px #0be0e7;
+    left: 10%;
+    text-shadow: 0px 0 12px #0be0e7;
     font-size: 15px;
 }
 section input{
     position: absolute;
     top: 25%;
-    left: 5%;
-    width: 90%;
+    left: 10%;
+    width: 80%;
     outline: none;
     border: none;
     background: none;
@@ -49,39 +50,64 @@ section input{
     color: white;
     padding: 10px 0;
 }
-section #p{
+section #instruction{
     /* background-color: white; */
-    position: absolute;
-    top: 36%;
+    position: fixed;
+    top: 43%;
     left: 50%;
     transform: translateX(-50%);
     /* text-align: center; */
 }
-section p.resultado{
-    position: absolute;
-    top: 55%;
-    left: 40%;
+section p#scoreboard{
+    position: fixed;
+    top: 69%;
+    left: 50%;
     transform: translateX(-50%);
 }
-section button{
+section .button{
     position: absolute;
-    top: 72%;
+    top: 77%;
     left: 50%;
     transform: translate(-50%, 20%);
-    padding: 20px 100px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    width: 250px;
     border: none;
     border-radius: 10px;
     background-color: #0184b8;
     color: white;
     transition: background .5s;
 }
-section button:hover{
-    background-color: #1b4ab1;
+section .button:hover{
     cursor: pointer;
 }
+section button#play{
+    /* display: none; */
+
+}
+section button#play:hover{
+    background-color: #1b4ab1;
+}
+section button#cancel{
+    display: none;
+    background-color: #eba92e;
+    color: black;
+}
+section button#cancel:hover{
+    color: white;
+    background-color: #be8926;
+}
+
 footer{
     position: absolute;
-    bottom: 18%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%);
+}
+@media (max-height: 800px) {
+    footer{
+        top: auto !important;
+        bottom: 9%;
+    }
 }

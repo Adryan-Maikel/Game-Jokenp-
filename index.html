@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jokenpô</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,24 +14,23 @@
     </header>
     <section>
         <h2>Jokenpô &#128074; &#128400; &#9996;</h2>
-        <input type="text" name="player" id="player" required>
-        <label for="player">Digite seu nome:</label>
-        <p id="p">
+        <input title="Digite seu nome" type="text" name="player" id="player" required>
+        <label title="Digite seu nome" id="label" for="player">Digite seu nome:</label>
+        <p id="instruction" title="Escolha Pedra ou Papel ou Tesoura">
             ESCOLHA:<br>
-            1 para &#128074; Pedra<br>
-            2 para &#128400; Papel<br>
-            3 para &#9996; Tesoura
+            &#128074; Pedra<br>&emsp;ou<br>
+            &#128400; Papel<br>&emsp;ou<br>
+            &#9996; Tesoura
         </p>
-        <p class="resultado">
-            <!-- Placar <br>
-            Player: <br>
-            Cpu: <br> -->
+        <p id="scoreboard">
+            <!-- &emsp;Placar <br>
+            Player:  vs Cpu: <br> -->
         </p>
-        <button id="play" onclick="play()">Jogar</button>
+        <button class="button" id="play" onclick="play()" title="Jogar">Jogar</button>
+        <button class="button" id="cancel" onclick="cancel()" title="Cancelar">Cancelar</button>
     </section>
     <footer>
         <address>&copy; Adryan Maikel</address>
     </footer>
-    <script src="js/scripts.js"></script>
 </body>
 </html>
