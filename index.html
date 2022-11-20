@@ -16,14 +16,15 @@
         <h2>Jokenpô &#128074; &#128400; &#9996;</h2>
         <input title="Digite seu nome" type="text" name="player" id="player" required>
         <label title="Digite seu nome" id="label" for="player">Digite seu nome:</label>
-        <p id="instruction" title="Escolha Pedra ou Papel ou Tesoura">
+        <p id="instruction" title="Escolha: Pedra ou Papel ou Tesoura">
             ESCOLHA:<br>
             &#128074; Pedra<br>&emsp;ou<br>
             &#128400; Papel<br>&emsp;ou<br>
             &#9996; Tesoura
         </p>
         <div id="game">
-            <h3 id="titleGame"><!-- Player, escolha. --></h3>
+            <h3 id="titleGame"><!-- Player, escolha... --></h3>
+            <p id="move"><!-- Player escolheu ${escolha} <br> VS <br> cpu escolheu ${escolha} --></p>
             <P class="choose" title="Pedra" id="Pedra" onclick="insert(1)">&#128074;</P>
             <P class="choose" title="Papel" id="Papel" onclick="insert(2)">&#128400;</P>
             <P class="choose" title="Tesoura" id="Tesoura" onclick="insert(3)">&#9996;</P>

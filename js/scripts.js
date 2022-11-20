@@ -2,6 +2,9 @@ var player,winner;
 var choosePlayer, chooseCpu;
 var cpuPoints,playerPoints;
 
+var input, label, button, instruction, titleGame, game, scoreboard, buttonCancel;
+var move;
+
 input = window.document.getElementById("player");
 label = window.document.getElementById("label");
 button = window.document.getElementById("play");
@@ -10,6 +13,7 @@ titleGame = window.document.getElementById("titleGame");
 game = window.document.getElementById("game");
 scoreboard = window.document.getElementById("scoreboard");
 buttonCancel = window.document.getElementById("cancel");
+move = window.document.getElementById("move");
 
 function play(){
 
@@ -35,27 +39,39 @@ function play(){
 }
 
 function insert(number){
+    move.style.display = "block";
     choosePlayer = number;
     if(choosePlayer == 1||choosePlayer == 2||choosePlayer ==3){
         checkWinner(choosePlayer);
         if(winner === "player"){
-            // alert(`Ganhou!\n${player} escolheu ${nameChoose(Number(choosePlayer))} e a maquina escolheu ${nameChoose(chooseCpu)}.`);    
-            
+            // alert(`Ganhou!\n${player} escolheu ${nameChoose(choosePlayer)} e a maquina escolheu ${nameChoose(chooseCpu)}.`);    
+
             playerPoints++;
+
+            titleGame.innerHTML = `${player.toUpperCase()}, GANHOU!`;
             scoreboard.innerHTML = `&emsp;Placar <br> Player: ${playerPoints}  vs Cpu: ${cpuPoints} <br>`;
+           
+            move.innerHTML = `Player escolheu ${nameChoose(choosePlayer)} <br> VS <br> Cpu escolheu ${nameChoose(chooseCpu)}`;
+
         }else if(winner === "cpu"){
-            // alert(`Perdeu!\n${player} escolheu ${nameChoose(Number(choosePlayer))} e a maquina escolheu ${nameChoose(chooseCpu)}.`);
-            
+            // alert(`Perdeu!\n${player} escolheu ${nameChoose(choosePlayer)} e a maquina escolheu ${nameChoose(chooseCpu)}.`);
+
             cpuPoints++;
+
+            titleGame.innerHTML = `CPU, GANHOU!`;
             scoreboard.innerHTML = `&emsp;Placar <br> Player: ${playerPoints}  vs Cpu: ${cpuPoints} <br>`;
+
+            move.innerHTML = `Player escolheu ${nameChoose(choosePlayer)} <br> VS <br> Cpu escolheu ${nameChoose(chooseCpu)}`;
+
         }else{
-            // alert("Empate!\nOs dois escolheram "+nameChoose(Number(choosePlayer))+".");
-        
+            // alert("Empate!\nOs dois escolheram "+nameChoose(choosePlayer)+".");
+            titleGame.innerHTML = `EMPATOU!`;
+            move.innerHTML = `Os dois escolheram ${nameChoose(choosePlayer)}`;
         }
-    
+
     }else{
         // alert(`Escolha invalida, perdeu essa!`);
-        cpuPoints++
+        // cpuPoints++;
     }
 }
 
@@ -88,7 +104,5 @@ function checkWinner(choosePlayer){
         }
     }else{
         winner = "none";
-    }
-
-
+    } 
 }

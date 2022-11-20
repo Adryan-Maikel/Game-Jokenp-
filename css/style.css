@@ -66,10 +66,17 @@ section #instruction{
 section div#game{
     display: none;
 }
-section div#game h3{
+section div#game h3#titleGame{
     font-size: 20px;
-    margin-top: 10%;
+    margin-top: 2%;
+    margin-bottom: 5%;
     text-align: center;
+}
+section div#game p#move{
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    display: none;
 }
 section div#game p.choose{
     display: flex;
@@ -80,7 +87,7 @@ section div#game p.choose{
     width: 70px;
     height: 70px;
     font-size: 60px;
-    margin-top: 20%;
+    transform: translateY(50%);
     margin-left: 8%;
     transition: text-shadow .5s, padding-bottom 1s;
 }
@@ -90,13 +97,13 @@ section div#game p.choose:hover{
 }
 section p#scoreboard{
     position: fixed;
-    top: 69%;
+    top: 70%;
     left: 50%;
     transform: translateX(-50%);
 }
 section .button{
     position: absolute;
-    top: 77%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, 20%);
     padding-top: 15px;
@@ -114,7 +121,6 @@ section .button:hover{
 }
 section button#play{
     /* display: none; */
-
 }
 section button#play:hover{
     background-color: #1b4ab1;
@@ -128,7 +134,6 @@ section button#cancel:hover{
     color: white;
     background-color: #be8926;
 }
-
 footer{
     position: absolute;
     top: 95%;
